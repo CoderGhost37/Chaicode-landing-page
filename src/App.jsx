@@ -1,8 +1,13 @@
+import { AppNavbar } from './components/Navbar'
+
 function App() {
   return (
-    <p className='font-medium text-2xl text-center'>
+    <main className='bg-background-primary relative w-full'>
+    <AppNavbar />
+    <p className='font-medium mt-12 text-white text-2xl text-center'>
       Hello World 🚀🚀🚀
       </p>
+    </main>
   )
 }
 
