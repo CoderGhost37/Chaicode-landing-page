@@ -10,6 +10,20 @@ export default {
         'text-primary': '#F59D0F', // Primary text color
         'text-secondary': '#868484', // Secondary/muted text color
       },
+      keyframes: {
+        'marquee-x': {
+          from: { transform: 'translateX(0)' },
+          to: { transform: 'translateX(calc(-100% - var(--gap)))' },
+        },
+        'marquee-y': {
+          from: { transform: 'translateY(0)' },
+          to: { transform: 'translateY(calc(-100% - var(--gap)))' },
+        },
+      },
+      animation: {
+        'marquee-horizontal': 'marquee-x var(--duration) infinite linear',
+        'marquee-vertical': 'marquee-y var(--duration) linear infinite',
+      },
     },
   },
   plugins: [],
