@@ -84,7 +84,7 @@ export function Cohorts() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: cohort.id * 0.1 }}
               viewport={{ once: true }}
-              className='relative rounded bg-black flex flex-col hover:scale-[1.02] transition-transform duration-300'
+              className='relative rounded bg-background-secondary flex flex-col hover:scale-[1.02] transition-transform duration-300'
             >
               <iframe
                 className='h-56 w-full rounded-t'

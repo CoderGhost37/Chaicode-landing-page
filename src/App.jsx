@@ -3,6 +3,7 @@ import { AppNavbar } from './components/Navbar';
 import { TweetLove } from './components/TweetLove';
 import { StudentsMarquee } from './components/StudentsMarquee';
 import { Cohorts } from './components/Cohorts';
+import { StudentFeedbacks } from './components/StudentFeedbacks';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <TweetLove />
       <StudentsMarquee />
       <Cohorts />
+      <StudentFeedbacks />
     </main>
   );
 }
