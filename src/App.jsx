@@ -6,6 +6,7 @@ import { Cohorts } from './components/Cohorts';
 import { StudentFeedbacks } from './components/StudentFeedbacks';
 import { UdemyCourses } from './components/Udemy';
 import { WhyChaicode } from './components/WhyChaicode';
+import { TopicsCloud } from './components/TopicsCloud';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <StudentFeedbacks />
       <UdemyCourses />
       <WhyChaicode />
+      <TopicsCloud />
     </main>
   );
 }

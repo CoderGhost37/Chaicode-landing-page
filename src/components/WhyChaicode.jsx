@@ -66,6 +66,15 @@ export function WhyChaicode() {
           />
         </div>
       </div>
+
+      <div className='mt-4 flex justify-center'>
+        <a
+          href='https://courses.chaicode.com/learn/view-all?show=batch&type=17'
+          className='border border-brand-primary py-3 px-6 text-brand-primary font-semibold rounded-lg mt-8 inline-block transition duration-200 hover:bg-orange-50/20 hover:scale-105'
+        >
+          Join Cohorts Live Classes
+        </a>
+      </div>
     </section>
   );
 }
