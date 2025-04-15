@@ -4,6 +4,7 @@ import { TweetLove } from './components/TweetLove';
 import { StudentsMarquee } from './components/StudentsMarquee';
 import { Cohorts } from './components/Cohorts';
 import { StudentFeedbacks } from './components/StudentFeedbacks';
+import { UdemyCourses } from './components/Udemy';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <StudentsMarquee />
       <Cohorts />
       <StudentFeedbacks />
+      <UdemyCourses />
     </main>
   );
 }
