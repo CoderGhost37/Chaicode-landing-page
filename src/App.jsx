@@ -9,6 +9,7 @@ import { WhyChaicode } from './components/WhyChaicode';
 import { TopicsCloud } from './components/TopicsCloud';
 import { JoinCommunity } from './components/JoinCommunity';
 import { FreeApi } from './components/FreeApi';
+import { KeyBenefitsOfCohort } from './components/KeyBenefitsOfCohort';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
       <Cohorts />
       <StudentFeedbacks />
       <UdemyCourses />
+      <KeyBenefitsOfCohort />
       <WhyChaicode />
       <TopicsCloud />
       <JoinCommunity />
