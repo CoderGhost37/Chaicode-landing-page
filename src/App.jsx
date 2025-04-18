@@ -8,6 +8,7 @@ import { UdemyCourses } from './components/Udemy';
 import { WhyChaicode } from './components/WhyChaicode';
 import { TopicsCloud } from './components/TopicsCloud';
 import { JoinCommunity } from './components/JoinCommunity';
+import { FreeApi } from './components/FreeApi';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
       <WhyChaicode />
       <TopicsCloud />
       <JoinCommunity />
+      <FreeApi />
     </main>
   );
 }
