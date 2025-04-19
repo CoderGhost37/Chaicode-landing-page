@@ -12,6 +12,7 @@ import { FreeApi } from './components/FreeApi';
 import { KeyBenefitsOfCohort } from './components/KeyBenefitsOfCohort';
 import AppDownload from './components/AppDownload';
 import { Features } from './components/Features';
+import { Footer } from './components/Footer';
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
       <FreeApi />
       <AppDownload />
       <Features />
+      <Footer />
     </main>
   );
 }

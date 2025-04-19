@@ -14,7 +14,7 @@ export function JoinCommunity() {
           </p>
 
           <div className='flex justify-center sm:justify-start'>
-            <a href='#cohorts'>
+            <a href='https://discord.com/invite/WDrH3zuWFb' target='_blank'>
               <motion.button
                 className='mt-8 group cursor-pointer rounded-xl border-4 border-brand-primary border-opacity-0 bg-transparent p-1 transition-all duration-500 hover:border-opacity-100'
                 initial={{ opacity: 0, scale: 0.9 }}
