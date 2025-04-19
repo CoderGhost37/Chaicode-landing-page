@@ -10,6 +10,7 @@ import { TopicsCloud } from './components/TopicsCloud';
 import { JoinCommunity } from './components/JoinCommunity';
 import { FreeApi } from './components/FreeApi';
 import { KeyBenefitsOfCohort } from './components/KeyBenefitsOfCohort';
+import AppDownload from './components/AppDownload';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
       <TopicsCloud />
       <JoinCommunity />
       <FreeApi />
+      <AppDownload />
     </main>
   );
 }
