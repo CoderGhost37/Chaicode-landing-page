@@ -1,12 +1,13 @@
 import { ArrowRight, Star } from 'lucide-react';
 import { Carousel } from './ui/carousel';
+import { udemyCourses } from '../constant/data';
 
 export function UdemyCourses() {
   const cards = udemyCourses.map((course, index) => (
     <UdemyCourseCard key={course.id} course={course} index={index} />
   ));
   return (
-    <section id='udemy' className='py-12 px-4 max-w-7xl mx-auto'>
+    <section id='udemy' className='py-24 px-4 max-w-7xl mx-auto'>
       <p className='text-center text-4xl md:text-6xl text-text-primary font-semibold'>
         Udemy
       </p>
@@ -94,39 +95,3 @@ function UdemyCourseCard({ course }) {
     </div>
   );
 }
-
-const udemyCourses = [
-  {
-    id: 1,
-    name: 'Complete web development course',
-    desc: 'Only web development course that you will need. Covers HTML, CSS, Tailwind, Node, React, MongoDB, Prisma, Deployment etc',
-    stars: 4.7,
-    tag: 'Top Rated',
-    originalPrice: 3089,
-    discountedPrice: 399,
-    videoUrl: 'https://www.youtube.com/embed/KZ31wDjYleI',
-    href: 'https://hitesh.ai/udemy',
-  },
-  {
-    id: 2,
-    name: 'Complete web development course',
-    desc: 'Only web development course that you will need. Covers HTML, CSS, Tailwind, Node, React, MongoDB, Prisma, Deployment etc',
-    stars: 4.2,
-    tag: 'Top Rated',
-    originalPrice: 3089,
-    discountedPrice: 399,
-    videoUrl: 'https://www.youtube.com/embed/KZ31wDjYleI',
-    href: 'https://hitesh.ai/udemy',
-  },
-  {
-    id: 3,
-    name: 'Complete web development course',
-    desc: 'Only web development course that you will need. Covers HTML, CSS, Tailwind, Node, React, MongoDB, Prisma, Deployment etc',
-    stars: 4.7,
-    tag: 'Top Rated',
-    originalPrice: 3089,
-    discountedPrice: 399,
-    videoUrl: 'https://www.youtube.com/embed/KZ31wDjYleI',
-    href: 'https://hitesh.ai/udemy',
-  },
-];

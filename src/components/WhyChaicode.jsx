@@ -2,7 +2,7 @@ import HitestImg from '../assets/hitesh.png';
 
 export function WhyChaicode() {
   return (
-    <section id='why-chaicode' className='py-12 px-4 max-w-7xl mx-auto'>
+    <section id='why-chaicode' className='py-24 px-4 max-w-7xl mx-auto'>
       <p className='text-center text-4xl md:text-6xl text-text-primary font-semibold'>
         But Why ChaiCode?
       </p>

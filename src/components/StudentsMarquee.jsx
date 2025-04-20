@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import LinkedIn from '../assets/linkedin.svg';
 import FaceBook from '../assets/facebook.svg';
 import Google from '../assets/google.svg';

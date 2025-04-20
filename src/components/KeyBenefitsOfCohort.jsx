@@ -1,46 +1,5 @@
-import {
-  CircleDollarSign,
-  CircleUserRound,
-  Code,
-  CodesandboxIcon,
-  GitPullRequest,
-  SquareStack,
-  SquareTerminal,
-} from 'lucide-react';
 import { motion } from 'motion/react';
-
-const cardData = [
-  {
-    icon: CircleUserRound,
-    title: 'Taught by Professionals',
-    desc: 'Our cohorts are being taught by top industry experts and educators.',
-  },
-  {
-    icon: CircleDollarSign,
-    title: 'Bounties',
-    desc: 'Earn rewards, from Cash to MacBook. Keeps you motivated to work hard.',
-  },
-  {
-    icon: Code,
-    title: 'Coding hostels',
-    desc: 'There is nothing like late night discussion with fellow learners and solving bugs.',
-  },
-  {
-    icon: GitPullRequest,
-    title: 'Peer Code Reviews',
-    desc: 'With our internal tools like Masterji, every code assignment gets feedback to improve your code.',
-  },
-  {
-    icon: SquareTerminal,
-    title: 'Leet Lab',
-    desc: 'Our in-house built LeetCode style platform that helps you to understand foundation of programming language.',
-  },
-  {
-    icon: SquareStack,
-    title: 'Revision classes',
-    desc: 'We have so many peer classes by fellow learners that you get so many chances to learn that topic.',
-  },
-];
+import { cardData } from '../constant/data';
 
 export function KeyBenefitsOfCohort() {
   return (

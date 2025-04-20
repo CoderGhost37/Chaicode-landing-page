@@ -1,11 +1,11 @@
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import { AspectRatio } from './ui/aspect-ratio';
 
 export function FreeApi() {
   return (
     <section id='freeapi' className='py-24 px-4 max-w-5xl mx-auto'>
       <motion.p
-        initial={{ opacity: 0, y: -20 }}
+        initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         className='text-center text-4xl md:text-6xl text-text-primary font-semibold mt-2'
@@ -22,8 +22,8 @@ export function FreeApi() {
       >
         <motion.div
           className='w-full'
-          initial={{ opacity: 0, x: -50 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.3 }}
         >
           <p className='text-center md:text-left text-base sm:text-lg md:text-xl lg:text-2xl font-semibold text-white'>
@@ -40,8 +40,8 @@ export function FreeApi() {
 
         <motion.div
           className='w-full'
-          initial={{ opacity: 0, x: 50 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.4 }}
         >
           <AspectRatio ratio={16 / 9}>

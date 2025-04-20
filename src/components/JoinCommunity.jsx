@@ -8,7 +8,13 @@ export function JoinCommunity() {
   return (
     <section id='community' className='px-4 py-24 max-w-5xl mx-auto'>
       <div className='flex flex-col-reverse sm:flex-row justify-between items-center gap-6'>
-        <div className='w-full md:w-3/5 flex flex-col'>
+        <motion.div
+          className='w-full md:w-3/5 flex flex-col'
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+        >
           <p className='mt-2 text-center sm:text-left text-text-primary font-semibold text-4xl md:text-5xl lg:text-6xl'>
             Join our community where creativity thrives.
           </p>
@@ -18,9 +24,10 @@ export function JoinCommunity() {
               <motion.button
                 className='mt-8 group cursor-pointer rounded-xl border-4 border-brand-primary border-opacity-0 bg-transparent p-1 transition-all duration-500 hover:border-opacity-100'
                 initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
+                whileInView={{ opacity: 1, scale: 1 }}
                 whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.3 }}
+                transition={{ duration: 0.4, delay: 0.4 }}
+                viewport={{ once: true }}
               >
                 <div className='relative flex items-center justify-center gap-4 overflow-hidden rounded-lg bg-brand-primary px-4 md:px-6 py-2 md:py-4 font-bold text-white'>
                   80,000 Active Coders in Discord
@@ -34,24 +41,32 @@ export function JoinCommunity() {
               </motion.button>
             </a>
           </div>
-        </div>
+        </motion.div>
 
-        <div className='relative w-full md:w-2/5 border-2 rounded bg-background-secondary border-gray-300'>
+        <motion.div
+          className='relative w-full md:w-2/5 border-2 rounded bg-background-secondary border-gray-300'
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, delay: 0.2 }}
+        >
           <div className='flex flex-col justify-center items-center'>
             <img
               src={HiteshDiscord}
+              fetchPriority='high'
               alt='ChaiCode Logo'
               className='w-full h-full object-cover'
             />
             <div className='bg-black px-4 py-1'>
               <img
                 src={Discord}
+                fetchPriority='high'
                 alt='Discord'
                 className='w-full h-auto object-cover'
               />
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

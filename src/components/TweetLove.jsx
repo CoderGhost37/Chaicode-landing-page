@@ -1,14 +1,9 @@
 import { Tweet } from 'react-tweet';
-
-const tweetIds = [
-  '1907045909394788416',
-  '1906390359841640771',
-  '1911327271782150213',
-];
+import { tweetIds } from '../constant/data';
 
 export function TweetLove() {
   return (
-    <section id='tweet-love' className='py-12 max-w-5xl mx-auto px-4'>
+    <section id='tweet-love' className='py-24 max-w-5xl mx-auto px-4'>
       <p className='text-center text-base md:text-xl font-medium text-text-secondary'>
         Love that we get from our community
       </p>

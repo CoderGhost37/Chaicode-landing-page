@@ -1,67 +1,10 @@
 import { ArrowRight, Calendar, Clock } from 'lucide-react';
-import { motion } from 'framer-motion';
-
-const cohorts = [
-  {
-    id: 1,
-    name: 'Full Stack Data Science 1.0',
-    desc: 'From Python basics to project deployment',
-    videoUrl: 'https://www.youtube.com/embed/Kjd-SWpe1do',
-    startsOn: 'April 12, 2025',
-    duration: '6 months',
-    originalPrice: 8999,
-    discountedPrice: 6999,
-    href: 'https://hitesh.ai/data-science',
-  },
-  {
-    id: 2,
-    name: 'GenAI with Python | Concept to deployment projects 1.0',
-    desc: 'Development side of AI application',
-    videoUrl: 'https://www.youtube.com/embed/VNb_LawBBWU',
-    startsOn: 'April 7, 2025',
-    duration: '1-2 months',
-    originalPrice: 7999,
-    discountedPrice: 4999,
-    href: 'https://hitesh.ai/genai-cohort',
-  },
-  {
-    id: 3,
-    name: 'DevOps for developers 1.0',
-    desc: 'Perfect guide to get started with DevOps',
-    videoUrl: 'https://www.youtube.com/embed/oBLpqSHc3lA',
-    startsOn: 'April 15, 2025',
-    duration: '1-2 months',
-    originalPrice: 7999,
-    discountedPrice: 4999,
-    href: 'https://hitesh.ai/devops-cohort',
-  },
-  {
-    id: 4,
-    name: 'Web Dev Cohort 1.0',
-    desc: 'Ultimate guide to build software on web',
-    videoUrl: 'https://www.youtube.com/embed/oBLpqSHc3lA',
-    startsOn: 'January 11, 2025',
-    duration: '6 months',
-    originalPrice: 8999,
-    discountedPrice: 6999,
-    href: 'https://hitesh.ai/cohort',
-  },
-  {
-    id: 5,
-    name: 'Coding Hero 2025',
-    desc: 'Our Community focused program for students',
-    videoUrl: 'https://www.youtube.com/embed/oBLpqSHc3lA',
-    startsOn: 'Constantly going',
-    duration: 'Always running',
-    originalPrice: 599,
-    discountedPrice: 299,
-    href: 'https://courses.chaicode.com/learn/batch/Coding-Hero-2025',
-  },
-];
+import { motion } from 'motion/react';
+import { cohorts } from '../constant/data';
 
 export function Cohorts() {
   return (
-    <section id='cohorts' className='px-4 py-12 max-w-7xl mx-auto'>
+    <section id='cohorts' className='px-4 py-24 max-w-7xl mx-auto'>
       <p className='text-center text-4xl md:text-6xl text-text-primary font-semibold'>
         Cohorts
       </p>

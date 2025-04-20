@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import { BackgroundFollowGlow } from './ui/background-follow-glow';
 import { GlowEffect } from './ui/glow-effect';
 import { ArrowRight } from 'lucide-react';
