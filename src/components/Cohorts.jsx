@@ -5,12 +5,25 @@ import { cohorts } from '../constant/data';
 export function Cohorts() {
   return (
     <section id='cohorts' className='px-4 py-24 max-w-7xl mx-auto'>
-      <p className='text-center text-4xl md:text-6xl text-text-primary font-semibold'>
+      <motion.p
+        className='text-center text-4xl md:text-6xl text-text-primary font-semibold'
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
         Cohorts
-      </p>
-      <p className='text-center text-base md:text-xl font-medium text-text-secondary mt-2'>
+      </motion.p>
+
+      <motion.p
+        className='text-center text-base md:text-xl font-medium text-text-secondary mt-2'
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+        viewport={{ once: true }}
+      >
         Live training classes
-      </p>
+      </motion.p>
 
       <div className='mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 md:gap-4 gap-6'>
         {cohorts.map((cohort) => {

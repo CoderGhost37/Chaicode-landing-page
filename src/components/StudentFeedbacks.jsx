@@ -1,3 +1,4 @@
+import { motion } from 'motion/react';
 import { Star } from 'lucide-react';
 import { Marquee } from './ui/marquee';
 import { testimonials } from '../constant/data';
@@ -5,13 +6,26 @@ import { testimonials } from '../constant/data';
 export function StudentFeedbacks() {
   return (
     <section id='feedbacks' className='py-24 px-4 max-w-7xl mx-auto'>
-      <p className='text-center text-4xl md:text-6xl text-text-primary font-semibold'>
+      <motion.p
+        className='text-center text-4xl md:text-6xl text-text-primary font-semibold'
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
         Our Students Feedback
-      </p>
-      <p className='text-center text-base md:text-xl font-medium text-text-secondary mt-2'>
+      </motion.p>
+
+      <motion.p
+        className='text-center text-base md:text-xl font-medium text-text-secondary mt-2'
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+        viewport={{ once: true }}
+      >
         Explore the incredible advantages of enrolling in our courses and
         enhancing your skills
-      </p>
+      </motion.p>
 
       <div className='mt-8 w-full overflow-hidden'>
         <Marquee className='[--duration:25s]' pauseOnHover applyMask={false}>

@@ -3,7 +3,7 @@ import { AspectRatio } from './ui/aspect-ratio';
 
 export function FreeApi() {
   return (
-    <section id='freeapi' className='py-24 px-4 max-w-5xl mx-auto'>
+    <section id='freeapi' className='py-24 px-4 max-w-6xl mx-auto'>
       <motion.p
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}

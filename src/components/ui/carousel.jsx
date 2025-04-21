@@ -1,13 +1,7 @@
-import React, {
-  useEffect,
-  useRef,
-  useState,
-  createContext,
-  useMemo,
-} from 'react';
+import { useEffect, useRef, useState, createContext } from 'react';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { cn } from '../../lib/utils';
-import { motion } from 'motion/react';
+import { motion, AnimatePresence } from 'motion/react';
 
 export const CarouselContext = createContext({
   currentIndex: 0,
@@ -18,106 +12,138 @@ export const Carousel = ({ items, initialScroll = 0 }) => {
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isHovering, setIsHovering] = useState(false);
 
   useEffect(() => {
     if (carouselRef.current) {
       carouselRef.current.scrollLeft = initialScroll;
       checkScrollability();
     }
+
+    window.addEventListener('resize', checkScrollability);
+    return () => window.removeEventListener('resize', checkScrollability);
   }, [initialScroll]);
 
-  const scrollableWidth = useMemo(() => {
-    const isDesktop = window && window.innerWidth >= 1024;
-    const isMobile = window && window.innerWidth < 768;
+  const scrollableWidth = () => {
+    if (typeof window === 'undefined') return 700;
+    const isDesktop = window.innerWidth >= 1024;
+    const isMobile = window.innerWidth < 768;
     return isDesktop ? 900 : isMobile ? 350 : 700;
-  }, [window.innerWidth]);
+  };
 
   const checkScrollability = () => {
     if (carouselRef.current) {
       const { scrollLeft, scrollWidth, clientWidth } = carouselRef.current;
       setCanScrollLeft(scrollLeft > 0);
-      setCanScrollRight(scrollLeft < scrollWidth - clientWidth);
+      setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 10);
     }
   };
 
   const scrollLeft = () => {
     if (carouselRef.current) {
       carouselRef.current.scrollBy({
-        left: -scrollableWidth,
+        left: -scrollableWidth(),
         behavior: 'smooth',
       });
+
+      // Update current index
+      if (currentIndex > 0) {
+        setCurrentIndex(currentIndex - 1);
+      }
     }
   };
 
   const scrollRight = () => {
     if (carouselRef.current) {
       carouselRef.current.scrollBy({
-        left: scrollableWidth,
+        left: scrollableWidth(),
         behavior: 'smooth',
       });
+
+      // Update current index
+      if (currentIndex < items.length - 1) {
+        setCurrentIndex(currentIndex + 1);
+      }
     }
   };
 
   return (
     <CarouselContext.Provider value={{ currentIndex }}>
-      <div className='relative w-full'>
+      <div
+        className='relative w-full'
+        onMouseEnter={() => setIsHovering(true)}
+        onMouseLeave={() => setIsHovering(false)}
+      >
         <div
-          className='flex w-full overflow-x-scroll overscroll-x-auto py-10 md:py-20 scroll-smooth [scrollbar-width:none]'
+          className='flex w-full overflow-x-scroll overscroll-x-auto py-10 scroll-smooth [scrollbar-width:none] -mx-4 px-4'
           ref={carouselRef}
           onScroll={checkScrollability}
+          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         >
           <div
             className={cn(
-              'absolute right-0  z-[1000] h-auto  w-[5%] overflow-hidden bg-gradient-to-l'
-            )}
-          ></div>
-
-          <div
-            className={cn(
-              'flex flex-row justify-start gap-4 pl-4',
-              // remove max-w-4xl if you want the carousel to span the full width of its container
+              'flex flex-row justify-start gap-6 pl-4 pr-16',
               'max-w-7xl mx-auto'
             )}
           >
             {items.map((item, index) => (
-              <motion.div
-                initial={{
-                  opacity: 0,
-                  y: 20,
-                }}
-                animate={{
-                  opacity: 1,
-                  y: 0,
-                  transition: {
-                    duration: 0.5,
-                    delay: 0.2 * index,
-                    ease: 'easeOut',
-                    once: true,
-                  },
-                }}
-                key={'card' + index}
-                className='last:pr-[5%] md:last:pr-[33%]  rounded-3xl'
-              >
+              <div key={'card' + index} className='flex-shrink-0'>
                 {item}
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
-        <div className='flex justify-end gap-2 mr-10'>
-          <button
-            className='relative z-40 h-10 w-10 rounded-full bg-gray-100 flex items-center justify-center disabled:opacity-50'
-            onClick={scrollLeft}
-            disabled={!canScrollLeft}
-          >
-            <ArrowLeft className='h-6 w-6 text-gray-500' />
-          </button>
-          <button
-            className='relative z-40 h-10 w-10 rounded-full bg-gray-100 flex items-center justify-center disabled:opacity-50'
-            onClick={scrollRight}
-            disabled={!canScrollRight}
-          >
-            <ArrowRight className='h-6 w-6 text-gray-500' />
-          </button>
+
+        <AnimatePresence>
+          {(isHovering || true) && (
+            <>
+              <motion.button
+                className='absolute left-4 top-1/2 -translate-y-1/2 z-40 h-12 w-12 rounded-full bg-gray-800/80 backdrop-blur-sm flex items-center justify-center disabled:opacity-30 disabled:cursor-not-allowed border border-gray-700'
+                onClick={scrollLeft}
+                disabled={!canScrollLeft}
+                initial={{ opacity: 0, x: -10 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -10 }}
+                transition={{ duration: 0.2 }}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                <ArrowLeft className='h-5 w-5 text-white' />
+              </motion.button>
+
+              <motion.button
+                className='absolute right-4 top-1/2 -translate-y-1/2 z-40 h-12 w-12 rounded-full bg-gray-800/80 backdrop-blur-sm flex items-center justify-center disabled:opacity-30 disabled:cursor-not-allowed border border-gray-700'
+                onClick={scrollRight}
+                disabled={!canScrollRight}
+                initial={{ opacity: 0, x: 10 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: 10 }}
+                transition={{ duration: 0.2 }}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                <ArrowRight className='h-5 w-5 text-white' />
+              </motion.button>
+            </>
+          )}
+        </AnimatePresence>
+
+        <div className='flex justify-center gap-1 mt-6'>
+          {Array.from({ length: Math.min(5, Math.ceil(items.length / 2)) }).map(
+            (_, index) => (
+              <motion.div
+                key={index}
+                className={`h-2 rounded-full ${
+                  index === currentIndex
+                    ? 'w-6 bg-yellow-500'
+                    : 'w-2 bg-gray-700'
+                }`}
+                initial={false}
+                animate={{ width: index === currentIndex ? 24 : 8 }}
+                transition={{ duration: 0.3 }}
+              />
+            )
+          )}
         </div>
       </div>
     </CarouselContext.Provider>

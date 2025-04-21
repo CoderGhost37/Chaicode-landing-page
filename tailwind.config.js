@@ -5,7 +5,7 @@ export default {
     extend: {
       colors: {
         'background-primary': '#13141B', // Dark background
-        'background-secondary': '#15202B', // Secondary Dark background
+        'background-secondary': '#1A1C25', // Secondary Dark background
         'brand-primary': '#FF7700', // Main brand color
         'brand-secondary': '#362420', // Accent/complementary brand color
         'text-primary': '#F59D0F', // Primary text color

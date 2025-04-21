@@ -4,13 +4,26 @@ import { cardData } from '../constant/data';
 export function KeyBenefitsOfCohort() {
   return (
     <section id='benefits-of-cohort' className='py-24 px-4 max-w-7xl mx-auto'>
-      <p className='text-center text-4xl md:text-6xl text-text-primary font-semibold'>
+      <motion.p
+        className='text-center text-4xl md:text-6xl text-text-primary font-semibold'
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
         Key Benefits Of Cohorts
-      </p>
-      <p className='text-center text-base md:text-xl font-medium text-text-secondary mt-2'>
+      </motion.p>
+
+      <motion.p
+        className='text-center text-base md:text-xl font-medium text-text-secondary mt-2'
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+        viewport={{ once: true }}
+      >
         Cohorts are best way to learn because you finish the course in a timely
         manner
-      </p>
+      </motion.p>
 
       <div className='px-6 py-12'>
         <div className='grid md:grid-cols-3 gap-6'>

@@ -1,3 +1,4 @@
+import { motion } from 'motion/react';
 import { ArrowRight, Star } from 'lucide-react';
 import { Carousel } from './ui/carousel';
 import { udemyCourses } from '../constant/data';
@@ -6,37 +7,87 @@ export function UdemyCourses() {
   const cards = udemyCourses.map((course, index) => (
     <UdemyCourseCard key={course.id} course={course} index={index} />
   ));
-  return (
-    <section id='udemy' className='py-24 px-4 max-w-7xl mx-auto'>
-      <p className='text-center text-4xl md:text-6xl text-text-primary font-semibold'>
-        Udemy
-      </p>
-      <p className='text-center text-base md:text-xl font-medium text-text-secondary mt-2'>
-        Not only in India, we are global leaders in tech education
-      </p>
 
-      <div className='mt-4'>
+  return (
+    <section id='udemy' className='py-24 px-4 bg-background-primary'>
+      <div className='max-w-7xl mx-auto'>
+        <motion.h2
+          className='text-center text-5xl md:text-7xl pb-3 font-bold bg-gradient-to-r from-yellow-500 to-orange-500 text-transparent bg-clip-text'
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          Udemy
+        </motion.h2>
+
+        <motion.p
+          className='text-center text-base md:text-xl font-medium text-gray-400 mt-3 mb-16'
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          viewport={{ once: true }}
+        >
+          Not only in India, we are global leaders in tech education
+        </motion.p>
+
         <Carousel items={cards} />
       </div>
     </section>
   );
 }
 
-function UdemyCourseCard({ course }) {
+function UdemyCourseCard({ course, index }) {
   const savePercent = Math.round(
     ((course.originalPrice - course.discountedPrice) / course.originalPrice) *
       100
   );
 
-  return (
-    <div className='relative flex flex-col-reverse md:flex-row md:gap-4 w-80 md:w-[700px] lg:w-[1000px] rounded justify-between bg-background-secondary'>
-      <div className='flex flex-col py-4 px-2 md:px-4'>
-        <p className='text-white text-base sm:text-lg md:text-xl lg:text-2xl font-bold w-full truncate'>
-          {course.name}
-        </p>
-        <p className='mt-2 text-gray-300 text-xs md:text-sm'>{course.desc}</p>
+  const cardVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        delay: index * 0.1,
+      },
+    },
+    hover: {
+      y: -10,
+      boxShadow: '0 10px 20px rgba(0,0,0,0.2)',
+      transition: { duration: 0.3 },
+    },
+  };
 
-        <div className='flex items-center gap-1 mt-2'>
+  return (
+    <motion.div
+      className='w-full md:w-[400px] lg:w-[450px] rounded-xl overflow-hidden bg-background-secondary border border-gray-800'
+      variants={cardVariants}
+      initial='hidden'
+      whileInView='visible'
+      whileHover='hover'
+      viewport={{ once: true }}
+    >
+      <div className='aspect-video w-full relative overflow-hidden'>
+        <iframe
+          className='w-full h-full'
+          src={course.videoUrl}
+          title={course.name}
+          frameBorder='0'
+          allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+          allowFullScreen
+        ></iframe>
+      </div>
+
+      <div className='p-6'>
+        <h3 className='text-white text-xl font-bold line-clamp-1'>
+          {course.name}
+        </h3>
+
+        <p className='mt-2 text-gray-400 text-sm line-clamp-2'>{course.desc}</p>
+
+        <div className='flex items-center gap-1 mt-3'>
           {[1, 2, 3, 4, 5].map((i) => {
             const diff = course.stars - i + 1;
             const fillPercentage =
@@ -44,7 +95,7 @@ function UdemyCourseCard({ course }) {
 
             return (
               <div key={i} className='relative w-4 h-4'>
-                <Star className='absolute text-gray-500' size={16} />
+                <Star className='absolute text-gray-600' size={16} />
                 <div
                   className='absolute overflow-hidden'
                   style={{ width: `${fillPercentage}%` }}
@@ -58,40 +109,43 @@ function UdemyCourseCard({ course }) {
               </div>
             );
           })}
-          <span className='text-sm text-gray-300 ml-1'>({course.stars})</span>
+          <span className='text-sm text-gray-400 ml-1'>
+            ({course.stars.toFixed(1)})
+          </span>
+
+          <div className='ml-auto'>
+            <span className='text-xs font-medium px-2 py-1 rounded bg-orange-500/20 text-orange-400'>
+              Top Rated
+            </span>
+          </div>
         </div>
 
-        <div className='mt-1 rounded w-fit inline-block py-0.5 px-2 text-sm text-red-500 bg-red-200 font-medium'>
-          {course.tag}
+        <div className='mt-4 flex items-end'>
+          <div>
+            <p className='text-white text-2xl font-bold'>
+              {course.discountedPrice} INR
+            </p>
+            <div className='flex items-center gap-2'>
+              <p className='text-gray-500 font-normal text-sm line-through'>
+                {course.originalPrice} INR
+              </p>
+              <p className='text-green-500 text-sm font-medium'>
+                Save {savePercent}%
+              </p>
+            </div>
+          </div>
         </div>
 
-        <div className='mt-4'>
-          <p className='text-white text-xl font-semibold'>
-            {course.discountedPrice} INR{' '}
-            <strike className='text-gray-500 font-normal text-base'>
-              {course.originalPrice} INR
-            </strike>
-          </p>
-          <p className='text-text-primary text-sm'>Save {savePercent}%</p>
-        </div>
-
-        <a
+        <motion.a
           href={course.href}
-          className='group mt-4 flex justify-center items-center gap-2 text-white font-medium w-full bg-gradient-to-r from-brand-primary/90 to-text-primary/90 group-hover:from-brand-primary group-hover:to-text-primary py-2 px-4 rounded transition-all duration-300'
+          className='mt-5 flex justify-center items-center gap-2 text-white font-medium w-full bg-gradient-to-r from-yellow-500 to-orange-500 py-3 px-4 rounded-lg transition-all duration-300'
+          whileHover={{ scale: 1.02 }}
+          whileTap={{ scale: 0.98 }}
         >
           <span>Learn More</span>
-          <ArrowRight className='transition-transform duration-300 group-hover:translate-x-1' />
-        </a>
+          <ArrowRight size={18} />
+        </motion.a>
       </div>
-
-      <iframe
-        className='h-40 md:h-72 w-full rounded-t md:rounded-r'
-        src={course.videoUrl}
-        title={course.name}
-        frameBorder='0'
-        allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-        allowFullScreen
-      ></iframe>
-    </div>
+    </motion.div>
   );
 }

@@ -1,17 +1,28 @@
-'use client';
-
 import { motion } from 'motion/react';
 import { topics } from '../constant/data';
 
 export function TopicsCloud() {
   return (
     <section id='topics' className='py-24 px-4 max-w-5xl mx-auto'>
-      <p className='text-center text-4xl md:text-6xl text-text-primary font-semibold'>
+      <motion.p
+        className='text-center text-4xl md:text-6xl text-text-primary font-semibold'
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
         Topics Cloud
-      </p>
-      <p className='text-center text-base md:text-xl font-medium text-text-secondary mt-2'>
+      </motion.p>
+
+      <motion.p
+        className='text-center text-base md:text-xl font-medium text-text-secondary mt-2'
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+        viewport={{ once: true }}
+      >
         You can find videos and courses on topics and much more
-      </p>
+      </motion.p>
 
       <motion.div
         className='mt-8 flex flex-wrap justify-center gap-4 md:gap-6'
