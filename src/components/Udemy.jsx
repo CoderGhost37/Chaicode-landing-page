@@ -11,18 +11,18 @@ export function UdemyCourses() {
   return (
     <section id='udemy' className='py-24 px-4 bg-background-primary'>
       <div className='max-w-7xl mx-auto'>
-        <motion.h2
-          className='text-center text-5xl md:text-7xl pb-3 font-bold bg-gradient-to-r from-yellow-500 to-orange-500 text-transparent bg-clip-text'
+        <motion.p
+          className='text-center text-4xl md:text-6xl text-text-primary font-semibold'
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
           Udemy
-        </motion.h2>
+        </motion.p>
 
         <motion.p
-          className='text-center text-base md:text-xl font-medium text-gray-400 mt-3 mb-16'
+          className='text-center text-base md:text-xl font-medium text-text-secondary mt-2'
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
@@ -62,7 +62,7 @@ function UdemyCourseCard({ course, index }) {
 
   return (
     <motion.div
-      className='w-full md:w-[400px] lg:w-[450px] rounded-xl overflow-hidden bg-background-secondary border border-gray-800'
+      className='w-[300px] md:w-[400px] lg:w-[450px] rounded-xl overflow-hidden bg-background-secondary border border-gray-800'
       variants={cardVariants}
       initial='hidden'
       whileInView='visible'

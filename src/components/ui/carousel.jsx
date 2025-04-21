@@ -127,24 +127,6 @@ export const Carousel = ({ items, initialScroll = 0 }) => {
             </>
           )}
         </AnimatePresence>
-
-        <div className='flex justify-center gap-1 mt-6'>
-          {Array.from({ length: Math.min(5, Math.ceil(items.length / 2)) }).map(
-            (_, index) => (
-              <motion.div
-                key={index}
-                className={`h-2 rounded-full ${
-                  index === currentIndex
-                    ? 'w-6 bg-yellow-500'
-                    : 'w-2 bg-gray-700'
-                }`}
-                initial={false}
-                animate={{ width: index === currentIndex ? 24 : 8 }}
-                transition={{ duration: 0.3 }}
-              />
-            )
-          )}
-        </div>
       </div>
     </CarouselContext.Provider>
   );

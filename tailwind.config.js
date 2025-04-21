@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        'background-primary': '#13141B', // Dark background
+        'background-primary': '#08080A', // Dark background
         'background-secondary': '#1A1C25', // Secondary Dark background
         'brand-primary': '#FF7700', // Main brand color
         'brand-secondary': '#362420', // Accent/complementary brand color
