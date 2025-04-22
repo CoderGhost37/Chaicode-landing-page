@@ -25,7 +25,6 @@ export function WhyChaicode() {
       </motion.p>
 
       <div className='mt-8 grid grid-cols-1 md:grid-cols-3 gap-4 items-start'>
-        {/* Left Column */}
         <div className='flex flex-col justify-between h-full gap-4'>
           {leftCards.map((card, index) => (
             <motion.div
@@ -40,9 +39,8 @@ export function WhyChaicode() {
           ))}
         </div>
 
-        {/* Center Card */}
         <motion.div
-          className='relative bg-neutral-900 border border-neutral-700 rounded-lg p-6 flex flex-col items-center text-center transition duration-200 hover:-translate-y-2'
+          className='relative bg-background-secondary border border-neutral-700 rounded-lg p-6 flex flex-col items-center text-center transition duration-200 hover:-translate-y-2'
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, delay: 0.3 }}
@@ -69,7 +67,6 @@ export function WhyChaicode() {
           </p>
         </motion.div>
 
-        {/* Right Column */}
         <div className='flex flex-col justify-between h-full gap-4'>
           {rightCards.map((card, index) => (
             <motion.div
@@ -105,7 +102,7 @@ export function WhyChaicode() {
 
 function InfoCard({ title, desc }) {
   return (
-    <div className='relative bg-neutral-900 border border-neutral-700 rounded-lg p-4 transition duration-200 hover:-translate-y-2'>
+    <div className='relative bg-background-secondary border border-neutral-700 rounded-lg p-4 transition duration-200 hover:-translate-y-2'>
       <h3 className='text-white font-semibold text-lg'>{title}</h3>
       <p className='text-gray-400 text-sm mt-1'>{desc}</p>
     </div>

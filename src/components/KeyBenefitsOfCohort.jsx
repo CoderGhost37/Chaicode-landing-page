@@ -36,8 +36,8 @@ export function KeyBenefitsOfCohort() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <div className='transition duration-200 group-hover:translate-x-2 mb-2 w-8 h-8 flex justify-center items-center text-white rounded'>
-                <card.icon />
+              <div className='transition duration-200 group-hover:translate-x-2 mb-2 inline-flex justify-center items-center p-2 bg-orange-500/10 rounded-lg'>
+                <card.icon className='w-6 h-6 text-orange-500' />
               </div>
               <h3 className='transition duration-200 group-hover:translate-x-2 text-xl font-semibold text-orange-400 mb-2'>
                 {card.title}
