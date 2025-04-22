@@ -10,10 +10,10 @@ export function Hero() {
       color='#FF5733'
       size={500}
       blue='10px'
-      className='bg-background-primary max-w-4xl mx-auto'
+      className='bg-background-primary'
     >
       <motion.div
-        className='flex flex-col justify-center items-center py-24 px-2 md:px-4'
+        className='flex flex-col justify-center items-center pt-36 pb-24 px-2 md:px-4 max-w-4xl mx-auto'
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}

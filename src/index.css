@@ -2,16 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-    :root {
-        --background-primary: #13141B;
-        --brand-primary: #FF7700;
-        --brand-secondary: #362420;
-        --text-primary: #F59D0F;
-        --text-secondary: #868484;
-    }
-}
-
 @keyframes marquee {
     0% {
         transform: translateY(0%);

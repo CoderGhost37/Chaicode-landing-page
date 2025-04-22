@@ -1,11 +1,11 @@
-"use client";
-import { useEffect, useRef, useState } from "react";
+'use client';
+import { useEffect, useRef, useState } from 'react';
 import { cn } from '../../lib/utils';
 
 export const BackgroundFollowGlow = ({
-  color = "#12B4F9",   // Hex color
-  size = 250,          // Diameter of glow in px
-  blur = "80px",       // Amount of blur
+  color = '#12B4F9', // Hex color
+  size = 250, // Diameter of glow in px
+  blur = '80px', // Amount of blur
   className,
   children,
 }) => {
@@ -14,7 +14,9 @@ export const BackgroundFollowGlow = ({
   const [currentPos, setCurrentPos] = useState({ x: 0, y: 0 });
 
   const hexToRGBA = (hex, alpha = 0.7) => {
-    let r = 0, g = 0, b = 0;
+    let r = 0,
+      g = 0,
+      b = 0;
     if (hex.length === 4) {
       r = parseInt(hex[1] + hex[1], 16);
       g = parseInt(hex[2] + hex[2], 16);
@@ -32,8 +34,8 @@ export const BackgroundFollowGlow = ({
       setTargetPos({ x: e.clientX, y: e.clientY });
     };
 
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
   useEffect(() => {
@@ -56,24 +58,32 @@ export const BackgroundFollowGlow = ({
   }, [targetPos]);
 
   return (
-    <div className={cn("relative w-full min-h-screen overflow-hidden bg-black", className)}>
+    <div
+      className={cn(
+        'relative w-full min-h-screen overflow-hidden bg-black',
+        className
+      )}
+    >
       {/* Glowing circle */}
       <div
         ref={glowRef}
-        className="pointer-events-none fixed z-0"
+        className='pointer-events-none absolute z-0'
         style={{
           width: `${size}px`,
           height: `${size}px`,
           left: `${currentPos.x - size / 2}px`,
           top: `${currentPos.y - size / 2}px`,
-          borderRadius: "50%",
-          background: `radial-gradient(circle, ${hexToRGBA(color, 0.5)} 0%, transparent 70%)`,
+          borderRadius: '50%',
+          background: `radial-gradient(circle, ${hexToRGBA(
+            color,
+            0.5
+          )} 0%, transparent 70%)`,
           filter: `blur(${blur})`,
-          transition: "transform 0.05s linear",
+          transition: 'transform 0.05s linear',
         }}
       />
       {/* Content */}
-      <div className="relative z-10">{children}</div>
+      <div className='relative z-10'>{children}</div>
     </div>
   );
 };
