@@ -3,6 +3,7 @@ export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
+      scrollBehavior: ['responsive'],
       colors: {
         'background-primary': '#08080A', // Dark background
         'background-secondary': '#1A1C25', // Secondary Dark background

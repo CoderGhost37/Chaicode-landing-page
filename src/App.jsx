@@ -16,7 +16,7 @@ import { Footer } from './components/Footer';
 
 function App() {
   return (
-    <main className='bg-background-primary relative w-full'>
+    <main className='bg-background-primary relative w-full scroll-smooth'>
       <AppNavbar />
       <Hero />
       <TweetLove />

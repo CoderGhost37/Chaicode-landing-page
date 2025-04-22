@@ -1,10 +1,41 @@
 import { motion } from 'motion/react';
 import { Tweet } from 'react-tweet';
 import { tweetIds } from '../constant/data';
+import { useState, useEffect } from 'react';
 
 export function TweetLove() {
+  const [columns, setColumns] = useState([]);
+
+  useEffect(() => {
+    const createColumns = () => {
+      const colCount = getColumnCount();
+      const cols = [];
+
+      for (let i = 0; i < colCount; i++) {
+        const shuffled = shuffleArray(tweetIds);
+        cols.push([...shuffled, ...shuffled]);
+      }
+
+      setColumns(cols);
+    };
+
+    createColumns();
+    window.addEventListener('resize', createColumns);
+    return () => window.removeEventListener('resize', createColumns);
+  }, []);
+
+  function shuffleArray(array) {
+    return [...array].sort(() => Math.random() - 0.5);
+  }
+
+  const getColumnCount = () => {
+    if (typeof window === 'undefined') return 3;
+    if (window.innerWidth < 640) return 1;
+    if (window.innerWidth < 1024) return 2;
+    return 3;
+  };
   return (
-    <section id='tweet-love' className='py-24 max-w-5xl mx-auto px-4'>
+    <section id='tweet-love' className='py-24 max-w-6xl mx-auto px-4'>
       <motion.p
         className='text-center text-4xl md:text-6xl text-text-primary font-semibold'
         initial={{ opacity: 0, y: 30 }}
@@ -25,12 +56,32 @@ export function TweetLove() {
         Love that we get from our community
       </motion.p>
 
-      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mt-4'>
-        {tweetIds.map((tweetId, index) => (
-          <div key={index} className='h-fit relative'>
-            <Tweet id={tweetId} />
-          </div>
-        ))}
+      <div className='mt-8 relative shadow-xl p-4 overflow-hidden h-[600px]'>
+        <div className='flex gap-4 justify-center'>
+          {columns.map((tweets, colIndex) => {
+            const duration = 40 + colIndex * 10;
+            return (
+              <div
+                key={colIndex}
+                className='space-y-6 animate-marquee'
+                style={{
+                  animationDuration: `${duration}s`,
+                  animationDelay: `${colIndex * 3}s`,
+                }}
+              >
+                {tweets.map((id, index) => (
+                  <div key={`${colIndex}-${index}`} className='w-full'>
+                    <Tweet id={id} />
+                  </div>
+                ))}
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Top & bottom fade */}
+        <div className='absolute top-0 left-0 right-0 h-16 bg-gradient-to-b from-background-primary to-transparent z-10' />
+        <div className='absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-background-primary to-transparent z-10' />
       </div>
     </section>
   );
