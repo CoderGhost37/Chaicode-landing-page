@@ -28,7 +28,7 @@ export const Carousel = ({ items, initialScroll = 0 }) => {
     if (typeof window === 'undefined') return 700;
     const isDesktop = window.innerWidth >= 1024;
     const isMobile = window.innerWidth < 768;
-    return isDesktop ? 900 : isMobile ? 350 : 700;
+    return isDesktop ? 900 : isMobile ? 350 : 500;
   };
 
   const checkScrollability = () => {

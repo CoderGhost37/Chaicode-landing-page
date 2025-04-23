@@ -62,7 +62,7 @@ function UdemyCourseCard({ course, index }) {
 
   return (
     <motion.div
-      className='w-[300px] md:w-[400px] lg:w-[450px] rounded-xl overflow-hidden bg-background-secondary border border-gray-800'
+      className='w-[300px] md:w-[500px] lg:w-[1000px] rounded-xl overflow-hidden bg-background-secondary border border-gray-800 flex flex-col lg:flex-row items-center'
       variants={cardVariants}
       initial='hidden'
       whileInView='visible'
