@@ -327,7 +327,7 @@ export default function AppDownload() {
                 <a
                   href='https://apps.apple.com/in/app/chaicode/id6504993143'
                   target='_blank'
-                  className='flex items-center justify-center gap-2 bg-black hover:bg-gray-900 text-white px-6 py-3 rounded-xl border border-gray-800 transition-all hover:shadow-lg hover:shadow-orange-500/20'
+                  className='flex items-center justify-center gap-2 bg-black hover:bg-brand-primary text-white px-6 py-3 rounded-xl border border-gray-800 transition-all hover:shadow-lg hover:shadow-orange-500/70'
                 >
                   <svg
                     viewBox='0 0 384 512'
@@ -350,7 +350,7 @@ export default function AppDownload() {
                 <a
                   href='https://play.google.com/store/apps/details?id=com.chaicode.courses&pcampaignid=web_share&pli=1'
                   target='_blank'
-                  className='flex items-center justify-center gap-2 bg-black hover:bg-gray-900 text-white px-6 py-3 rounded-xl border border-gray-800 transition-all hover:shadow-lg hover:shadow-orange-500/20'
+                  className='flex items-center justify-center gap-2 bg-black hover:bg-brand-primary text-white px-6 py-3 rounded-xl border border-gray-800 transition-all hover:shadow-lg hover:shadow-orange-500/70'
                 >
                   <svg
                     viewBox='0 0 512 512'
