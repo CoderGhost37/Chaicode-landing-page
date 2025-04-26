@@ -47,7 +47,7 @@ export function FreeApi() {
           <AspectRatio ratio={16 / 9}>
             <iframe
               className='h-full w-full rounded-lg'
-              src='https://www.youtube.com/embed/yG8JMlldoCE'
+              src='https://www.youtube.com/embed/FjHSOAtlyKI'
               title='YouTube video player'
               frameBorder='0'
               allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
