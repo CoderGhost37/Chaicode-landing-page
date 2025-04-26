@@ -107,7 +107,7 @@ function NeonCard({ children, className }) {
       )}
       style={{
         boxShadow:
-          '0 0 20px 2px #FF7700AA, 0 1.5px 8px 0 #FF770022, 0 0 0px 0 #000',
+          '0 0 15px 2px #FF7700AA, 0 1.5px 8px 0 #FF770022, 0 0 0px 0 #000',
       }}
     >
       <div className='absolute inset-0 pointer-events-none z-0'>
