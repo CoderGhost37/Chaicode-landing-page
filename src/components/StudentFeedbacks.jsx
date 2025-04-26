@@ -1,13 +1,15 @@
-import { motion, AnimatePresence } from 'motion/react';
+'use client';
+
+import { useEffect, useRef, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight, Quote, Star } from 'lucide-react';
-import { Marquee } from './ui/marquee';
 import { testimonials } from '../constant/data';
-import { useEffect, useState } from 'react';
 
 export function StudentFeedbacks() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(0);
   const [autoplay, setAutoplay] = useState(true);
+  const timeoutRef = useRef(null);
 
   useEffect(() => {
     if (!autoplay) return;
@@ -20,8 +22,18 @@ export function StudentFeedbacks() {
     return () => clearInterval(interval);
   }, [autoplay]);
 
-  const handlePrev = () => {
+  const pauseAutoplay = () => {
     setAutoplay(false);
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+    timeoutRef.current = setTimeout(() => {
+      setAutoplay(true);
+    }, 10000); // resume autoplay after 10 seconds
+  };
+
+  const handlePrev = () => {
+    pauseAutoplay();
     setDirection(-1);
     setCurrentIndex((prevIndex) =>
       prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1
@@ -29,10 +41,24 @@ export function StudentFeedbacks() {
   };
 
   const handleNext = () => {
-    setAutoplay(false);
+    pauseAutoplay();
     setDirection(1);
     setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
   };
+
+  const handleDotClick = (index) => {
+    pauseAutoplay();
+    setDirection(index > currentIndex ? 1 : -1);
+    setCurrentIndex(index);
+  };
+
+  useEffect(() => {
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+    };
+  }, []);
 
   const variants = {
     enter: (direction) => ({
@@ -181,11 +207,7 @@ export function StudentFeedbacks() {
               {testimonials.map((_, index) => (
                 <button
                   key={index}
-                  onClick={() => {
-                    setAutoplay(false);
-                    setDirection(index > currentIndex ? 1 : -1);
-                    setCurrentIndex(index);
-                  }}
+                  onClick={() => handleDotClick(index)}
                   className={`w-2 h-2 rounded-full transition-all duration-300 ${
                     index === currentIndex
                       ? 'w-6 bg-brand-primary'
