@@ -59,7 +59,7 @@ export function TweetLove() {
       <div className='mt-8 relative shadow-xl p-4 overflow-hidden h-[600px]'>
         <div className='flex gap-4 justify-center'>
           {columns.map((tweets, colIndex) => {
-            const duration = 40 + colIndex * 10;
+            const duration = 60 + colIndex * 10;
             return (
               <div
                 key={colIndex}
