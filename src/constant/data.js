@@ -217,58 +217,44 @@ export const cohorts = [
 
 export const testimonials = [
   {
-    name: 'John Doe.',
-    star: 5,
-    image:
-      'https://plus.unsplash.com/premium_photo-1717529137991-510ad3be15d9?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    description:
-      'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa nostrum labore dolor facilis, nesciunt facere mollitia nam aspernatur!',
-  },
-  {
-    name: 'Paul A',
-    star: 4,
-    image:
-      'https://images.unsplash.com/photo-1566753323558-f4e0952af115?q=80&w=1921&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    description:
-      'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa nostrum labore dolor facilis, nesciunt facere mollitia nam aspernatur!',
-  },
-  {
-    name: 'Jeff Roe',
-    star: 5,
-    image:
-      'https://images.unsplash.com/photo-1560298803-1d998f6b5249?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    description:
-      'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa nostrum labore dolor facilis, nesciunt facere mollitia nam aspernatur!',
-  },
-  {
-    name: 'Mex Q',
-    star: 4,
-    image:
-      'https://images.unsplash.com/photo-1518287010730-4386819bf3e9?q=80&w=2020&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    description:
-      'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa nostrum labore dolor facilis, nesciunt facere mollitia nam aspernatur!',
-  },
-  {
-    name: 'Cristina W',
-    star: 3,
+    id: 1,
+    name: 'Priya Sharma',
+    role: 'Full Stack Developer',
+    company: 'TechNova',
     image:
       'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1976&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    description:
-      'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa nostrum labore dolor facilis, nesciunt facere mollitia nam aspernatur!',
+    rating: 5,
+    text: "ChaiCode transformed my coding journey. The peer learning and code reviews helped me land my dream job. The virtual hostel concept created a sense of community I couldn't find anywhere else.",
   },
   {
-    name: 'Lanna Del Rey',
-    star: 5,
+    id: 2,
+    name: 'Rahul Patel',
+    role: 'Frontend Engineer',
+    company: 'DesignHub',
     image:
       'https://images.unsplash.com/photo-1581092916357-5896ebc48073?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. ',
+    rating: 5,
+    text: "The bounties and group projects at ChaiCode gave me real-world experience that bootcamps couldn't. The alumni network has been invaluable for my career growth and opportunities.",
   },
   {
-    name: 'Paul Logan',
-    star: 4,
+    id: 3,
+    name: 'Anmol Verma',
+    role: 'Data Scientist',
+    company: 'AnalyticsPro',
     image:
-      'https://images.unsplash.com/photo-1483389127117-b6a2102724ae?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. ',
+      'https://images.unsplash.com/photo-1518287010730-4386819bf3e9?q=80&w=2020&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    rating: 5,
+    text: "ChaiCode's doubt sessions were game-changing for complex topics. The instructors don't just teach code, they mentor you through the entire learning process. Best investment in my education.",
+  },
+  {
+    id: 4,
+    name: 'Vikram Singh',
+    role: 'Backend Developer',
+    company: 'CloudScale',
+    image:
+      'https://images.unsplash.com/photo-1566753323558-f4e0952af115?q=80&w=1921&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    rating: 4,
+    text: "The structured learning path combined with practical projects made all the difference. ChaiCode's approach to teaching coding is revolutionary compared to traditional courses I've tried.",
   },
 ];
 
