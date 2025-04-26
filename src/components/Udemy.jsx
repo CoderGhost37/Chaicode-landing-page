@@ -1,6 +1,12 @@
 import { motion } from 'motion/react';
 import { ArrowRight, Star } from 'lucide-react';
-import { Carousel } from './ui/carousel';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from './ui/carousel';
 import { udemyCourses } from '../constant/data';
 
 export function UdemyCourses() {
@@ -31,7 +37,27 @@ export function UdemyCourses() {
           Not only in India, we are global leaders in tech education
         </motion.p>
 
-        <Carousel items={cards} />
+        <div className='px-8 md:px-16'>
+          <Carousel
+            className='mt-12 max-w-6xl mx-auto'
+            loop={true}
+            defaultIndex={0}
+          >
+            <CarouselContent>
+              {udemyCourses.map((course, index) => (
+                <CarouselItem
+                  key={course.id}
+                  index={index}
+                  className='md:basis-1/2 lg:basis-full'
+                >
+                  <UdemyCourseCard course={course} index={index} />
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious />
+            <CarouselNext />
+          </Carousel>
+        </div>
       </div>
     </section>
   );
@@ -62,7 +88,7 @@ function UdemyCourseCard({ course, index }) {
 
   return (
     <motion.div
-      className='w-[300px] md:w-[500px] lg:w-[1000px] rounded-xl overflow-hidden bg-background-secondary border border-gray-800 flex flex-col lg:flex-row items-center'
+      className='w-full rounded-xl overflow-hidden bg-background-secondary border border-gray-800 flex flex-col lg:flex-row items-center'
       variants={cardVariants}
       initial='hidden'
       whileInView='visible'
