@@ -1,71 +1,74 @@
-import { ArrowRight } from 'lucide-react';
 import { motion } from 'motion/react';
-import { cn } from '../lib/utils';
-import HiteshDiscord from '../assets/hitesh-discord.jpg';
-import Discord from '../assets/discord.png';
+import ChaiLogo from '../assets/chai-white.png';
+import { GlowEffect } from './ui/glow-effect';
+import { FaDiscord } from 'react-icons/fa';
 
 export function JoinCommunity() {
   return (
-    <section id='community' className='px-4 py-24 max-w-5xl mx-auto'>
-      <div className='flex flex-col-reverse sm:flex-row justify-between items-center gap-6'>
+    <section id='community' className='relative px-4 py-24 max-w-7xl mx-auto'>
+      <div className='flex flex-col-reverse md:flex-row justify-between items-center bg-black/50 rounded-lg px-8 py-8 gap-12'>
         <motion.div
           className='w-full md:w-3/5 flex flex-col'
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <p className='mt-2 text-center sm:text-left text-text-primary font-semibold text-4xl md:text-5xl lg:text-6xl'>
-            Join our community where creativity thrives.
-          </p>
+          <motion.div
+            className='flex items-center gap-1 mb-4'
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+          >
+            <div className='w-2 h-2 bg-[#FF7700] rounded-full mr-2 animate-pulse' />
+            <p className='text-sm text-gray-400 font-semibold'>
+              80,000 Active Coders in Discord
+            </p>
+          </motion.div>
 
-          <div className='flex justify-center sm:justify-start'>
-            <a href='https://discord.com/invite/WDrH3zuWFb' target='_blank'>
-              <motion.button
-                className='mt-8 group cursor-pointer rounded-xl border-4 border-brand-primary border-opacity-0 bg-transparent p-1 transition-all duration-500 hover:border-opacity-100'
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.4, delay: 0.4 }}
-                viewport={{ once: true }}
-              >
-                <div className='relative flex items-center justify-center gap-4 overflow-hidden rounded-lg bg-brand-primary px-4 md:px-6 py-2 md:py-4 font-bold text-white'>
-                  80,000 Active Coders in Discord
-                  <ArrowRight className='transition-all group-hover:translate-x-2 group-hover:scale-125' />
-                  <div
-                    className={cn(
-                      'absolute -left-16 top-0 h-full w-12 rotate-[30deg] scale-y-150 bg-white/10 transition-all duration-700 group-hover:left-[calc(100%+1rem)]'
-                    )}
-                  />
-                </div>
-              </motion.button>
+          <motion.h2
+            className='text-text-primary font-bold text-4xl md:text-5xl lg:text-6xl leading-tight'
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+          >
+            Learn & Grow with a community of learners just like you!
+          </motion.h2>
+
+          <motion.div
+            className='mt-8 flex justify-center md:justify-start'
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.6 }}
+          >
+            <a
+              href='https://discord.com/invite/WDrH3zuWFb'
+              target='_blank'
+              rel='noopener noreferrer'
+              className='inline-flex items-center gap-2 bg-[#5865F2] hover:bg-[#4752C4] text-white font-semibold px-8 py-4 rounded-full transition-all duration-300 hover:scale-105'
+            >
+              <FaDiscord className='w-6 h-6' />
+              Join Discord
             </a>
-          </div>
+          </motion.div>
         </motion.div>
 
         <motion.div
-          className='relative w-full md:w-2/5 border-2 rounded bg-background-secondary border-gray-300'
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          className='w-full md:w-2/5 rounded-lg overflow-hidden'
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.7, delay: 0.2 }}
+          transition={{ duration: 0.7 }}
         >
-          <div className='flex flex-col justify-center items-center'>
-            <img
-              src={HiteshDiscord}
-              fetchPriority='high'
-              alt='ChaiCode Logo'
-              className='w-full h-full object-cover'
-            />
-            <div className='bg-black px-4 py-1'>
-              <img
-                src={Discord}
-                fetchPriority='high'
-                alt='Discord'
-                className='w-full h-auto object-cover'
-              />
-            </div>
-          </div>
+          <img
+            src={ChaiLogo}
+            alt='Discord Community Screenshot'
+            className='w-60 sm:w-80 md:w-full h-auto object-cover mx-auto rounded-lg'
+            loading='lazy'
+          />
         </motion.div>
       </div>
     </section>
