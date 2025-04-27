@@ -5,7 +5,7 @@ export function WhyChaicode() {
   return (
     <section id='why-chaicode' className='py-24 px-4 max-w-7xl mx-auto'>
       <motion.p
-        className='text-center text-4xl md:text-6xl text-text-primary font-semibold'
+        className='text-center text-4xl md:text-6xl bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent font-semibold font-roboto'
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}

@@ -42,8 +42,14 @@ export function Footer() {
             <h4 className='font-semibold mb-3'>Products</h4>
             <ul className='space-y-2 text-gray-300'>
               {footer.products.map((item) => (
-                <li key={item}>
-                  <a href={item.link} className='hover:text-text-primary'>
+                <li
+                  key={item}
+                  className='transition duration-200 hover:translate-x-1'
+                >
+                  <a
+                    href={item.link}
+                    className='hover:text-text-primary font-poppins'
+                  >
                     {item.name}
                   </a>
                 </li>
@@ -54,8 +60,14 @@ export function Footer() {
             <h4 className='font-semibold mb-3'>Resources</h4>
             <ul className='space-y-2 text-gray-300'>
               {footer.resources.map((item) => (
-                <li key={item}>
-                  <a href={item.link} className='hover:text-text-primary'>
+                <li
+                  key={item}
+                  className='transition duration-200 hover:translate-x-1'
+                >
+                  <a
+                    href={item.link}
+                    className='hover:text-text-primary font-poppins'
+                  >
                     {item.name}
                   </a>
                 </li>

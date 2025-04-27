@@ -27,7 +27,7 @@ export function JoinCommunity() {
           </motion.div>
 
           <motion.h2
-            className='text-text-primary font-bold text-4xl md:text-5xl lg:text-6xl leading-tight'
+            className='text-text-primary font-bold text-4xl md:text-5xl lg:text-6xl leading-tight font-roboto'
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}

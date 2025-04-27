@@ -1,6 +1,5 @@
 import { motion } from 'motion/react';
 import { BackgroundFollowGlow } from './ui/background-follow-glow';
-import { GlowEffect } from './ui/glow-effect';
 import { ArrowRight } from 'lucide-react';
 import { cn } from '../lib/utils';
 
@@ -13,7 +12,7 @@ export function Hero() {
       className='bg-background-primary'
     >
       <motion.div
-        className='flex flex-col justify-center items-center pt-36 pb-24 px-2 md:px-4 max-w-4xl mx-auto'
+        className='flex flex-col justify-center items-center pt-36 pb-24 px-4 max-w-4xl mx-auto'
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
@@ -35,7 +34,9 @@ export function Hero() {
           transition={{ duration: 0.5, delay: 0.6 }}
         >
           <span className='mt-4 relative inline-block text-center z-20 text-neutral-200 bg-clip-text px-2 py-4 text-5xl font-bold lg:text-6xl after:absolute after:bottom-0 after:left-0 after:h-1 after:w-full after:bg-brand-primary after:transition-all after:duration-150 hover:after:h-full'>
-            <span className='relative z-10'>Consistency and Community</span>
+            <span className='relative z-10 font-roboto'>
+              Consistency and Community
+            </span>
           </span>
         </motion.p>
         <motion.p
@@ -48,7 +49,7 @@ export function Hero() {
         </motion.p>
 
         <motion.p
-          className='md:mt-2 text-center z-20 text-text-primary bg-clip-text text-lg font-semibold sm:text-3xl'
+          className='md:mt-2 text-center z-20 text-text-primary bg-clip-text text-lg font-semibold md:text2xl lg:text-3xl'
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.7 }}

@@ -8,7 +8,7 @@ export function FreeApi() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className='text-center text-4xl md:text-6xl text-text-primary font-semibold mt-2'
+        className='text-center text-4xl md:text-6xl bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent font-semibold mt-2 font-roboto'
       >
         FreeAPI - Open Source
       </motion.p>
@@ -26,10 +26,10 @@ export function FreeApi() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.3 }}
         >
-          <p className='text-center md:text-left text-base sm:text-lg md:text-xl lg:text-2xl font-semibold text-white'>
+          <p className='text-center md:text-left text-base sm:text-lg md:text-xl lg:text-2xl font-semibold text-white font-inter'>
             Unlock Your Potential with Our API Hub
           </p>
-          <p className='mt-2 text-center md:text-left text-base md:text-lg font-medium text-text-secondary'>
+          <p className='mt-2 text-center md:text-left text-base md:text-lg font-medium text-text-secondary font-inter'>
             Our API Hub is designed to streamline your learning experience in
             API handling across various programming languages. With this
             resource, you can effortlessly build and showcase your front-end

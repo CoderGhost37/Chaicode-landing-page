@@ -11,7 +11,7 @@ export function Features() {
   return (
     <section
       id='features'
-      className='min-h-screen flex flex-col justify-center items-center py-8'
+      className='min-h-screen flex flex-col justify-center items-center py-8 font-inter'
     >
       <div className='w-full max-w-6xl px-2 grid gap-6 grid-cols-1 md:grid-cols-2 grid-rows-2 md:grid-rows-1'>
         <NeonCard className='min-h-[250px] col-span-1 row-span-1 flex flex-col justify-between backdrop-blur-[2px]'>

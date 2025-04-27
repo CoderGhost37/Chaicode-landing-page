@@ -246,7 +246,7 @@ export default function AppDownload() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className='text-4xl md:text-5xl py-2 font-bold mb-6 bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent'
+              className='text-4xl md:text-5xl py-2 font-bold mb-6 bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent font-roboto'
             >
               Learn on the go
             </motion.h2>
@@ -255,7 +255,7 @@ export default function AppDownload() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className='text-lg text-gray-300 mb-8'
+              className='text-lg text-gray-300 mb-8 font-inter'
             >
               Take your coding journey anywhere with the ChaiCode mobile app.
               Access courses, join live sessions, and connect with the community
@@ -270,7 +270,7 @@ export default function AppDownload() {
             >
               <motion.div
                 whileHover={{ x: 5 }}
-                className='flex items-center gap-4 group'
+                className='flex items-center gap-4 group font-inter'
               >
                 <motion.div
                   whileHover={{ scale: 1.1 }}
