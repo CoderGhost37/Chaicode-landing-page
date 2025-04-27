@@ -18,23 +18,15 @@ export function Hero() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
       >
-        <div className='relative'>
-          <GlowEffect
-            colors={['#FF5733', '#33FF57', '#3357FF', '#F1C40F']}
-            mode='colorShift'
-            blur='soft'
-            duration={3}
-            scale={0.9}
-          />
-          <motion.button
-            className='relative inline-flex items-center gap-1 rounded-md bg-zinc-950 px-2.5 py-1.5 text-sm text-zinc-50 outline outline-1 outline-[#fff2f21f]'
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.3, delay: 0.4 }}
-          >
-            Trusted by 1.5M Code Learners
-          </motion.button>
-        </div>
+        <motion.p
+          className='relative inline-flex items-center gap-1 rounded-md bg-zinc-950 px-2.5 py-1.5 text-sm text-zinc-50 outline outline-1 outline-[#fff2f21f]'
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.3, delay: 0.4 }}
+        >
+          <div className='w-2 h-2 bg-[#FF7700] rounded-full mr-2 animate-pulse' />
+          <span>Trusted by 1.5M Code Learners</span>
+        </motion.p>
 
         <motion.p
           className='hidden md:block'

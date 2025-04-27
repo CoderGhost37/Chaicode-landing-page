@@ -1,6 +1,5 @@
 import { motion } from 'motion/react';
 import ChaiLogo from '../assets/chai-white.png';
-import { GlowEffect } from './ui/glow-effect';
 import { FaDiscord } from 'react-icons/fa';
 
 export function JoinCommunity() {
