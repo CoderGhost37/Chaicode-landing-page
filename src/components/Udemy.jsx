@@ -8,6 +8,7 @@ import {
   CarouselPrevious,
 } from './ui/carousel';
 import { udemyCourses } from '../constant/data';
+import YouTube from 'react-youtube';
 
 export function UdemyCourses() {
   const cards = udemyCourses.map((course, index) => (
@@ -96,14 +97,14 @@ function UdemyCourseCard({ course, index }) {
       viewport={{ once: true }}
     >
       <div className='aspect-video w-full relative overflow-hidden'>
-        <iframe
-          className='w-full h-full'
-          src={course.videoUrl}
-          title={course.name}
-          frameBorder='0'
-          allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-          allowFullScreen
-        ></iframe>
+        <YouTube
+          videoId={course.videoId}
+          style={{ width: '100%', height: '100%' }}
+          opts={{
+            height: '100%',
+            width: '100%',
+          }}
+        />
       </div>
 
       <div className='p-6'>

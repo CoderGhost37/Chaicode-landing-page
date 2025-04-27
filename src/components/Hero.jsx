@@ -2,6 +2,7 @@ import { motion } from 'motion/react';
 import { BackgroundFollowGlow } from './ui/background-follow-glow';
 import { ArrowRight } from 'lucide-react';
 import { cn } from '../lib/utils';
+import YouTube from 'react-youtube';
 
 export function Hero() {
   return (
@@ -88,19 +89,19 @@ export function Hero() {
         </a>
 
         <motion.div
-          className='relative mt-8 flex h-60 sm:h-80 md:h-96 w-full max-w-3xl items-center justify-center overflow-hidden rounded-lg bg-zinc-900 shadow-lg shadow-zinc-900/50'
+          className='relative mt-8 flex aspect-video w-full max-w-3xl mx-auto items-center justify-center overflow-hidden rounded-lg bg-zinc-900 shadow-lg shadow-zinc-900/50'
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, delay: 0.9 }}
         >
-          <iframe
-            className='absolute top-0 left-0 h-full w-full rounded-lg'
-            src='https://www.youtube.com/embed/yG8JMlldoCE'
-            title='YouTube video player'
-            frameBorder='0'
-            allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-            allowFullScreen
-          ></iframe>
+          <YouTube
+            videoId='yG8JMlldoCE'
+            style={{ width: '100%', height: '100%' }}
+            opts={{
+              height: '100%',
+              width: '100%',
+            }}
+          />
         </motion.div>
       </motion.div>
     </BackgroundFollowGlow>

@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
 import { AspectRatio } from './ui/aspect-ratio';
+import YouTube from 'react-youtube';
 
 export function FreeApi() {
   return (
@@ -44,15 +45,18 @@ export function FreeApi() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.4 }}
         >
-          <AspectRatio ratio={16 / 9}>
-            <iframe
-              className='h-full w-full rounded-lg'
-              src='https://www.youtube.com/embed/FjHSOAtlyKI'
-              title='YouTube video player'
-              frameBorder='0'
-              allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-              allowFullScreen
-            ></iframe>
+          <AspectRatio
+            ratio={16 / 9}
+            className='rounded-lg h-full overflow-hidden'
+          >
+            <YouTube
+              videoId='FjHSOAtlyKI'
+              style={{ width: '100%', height: '100%' }}
+              opts={{
+                height: '100%',
+                width: '100%',
+              }}
+            />
           </AspectRatio>
         </motion.div>
       </motion.div>
