@@ -179,7 +179,7 @@ export const NavbarLogo = ({ src }) => {
       href='#'
       className='relative z-20 mr-4 flex items-center space-x-2 px-2 py-1 text-sm font-normal text-black'
     >
-      <img src={src} alt='logo' width={150} height={80} />
+      <img src={src} alt='logo' width={150} height={80} fetchPriority='high' />
     </a>
   );
 };

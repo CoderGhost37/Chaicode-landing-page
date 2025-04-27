@@ -164,6 +164,7 @@ function UdemyCourseCard({ course, index }) {
 
         <motion.a
           href={course.href}
+          title={course.name}
           className='mt-5 flex justify-center items-center gap-2 text-white font-medium w-full bg-gradient-to-r from-yellow-500 to-orange-500 py-3 px-4 rounded-lg transition-all duration-300'
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}

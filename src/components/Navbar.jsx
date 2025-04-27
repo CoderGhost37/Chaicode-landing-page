@@ -45,7 +45,10 @@ export function AppNavbar() {
       <NavBody>
         <NavbarLogo src={Logo} />
         <NavItems items={navItems} />
-        <a href='https://courses.chaicode.com/learn/account/signin'>
+        <a
+          href='https://courses.chaicode.com/learn/account/signin'
+          title='Login'
+        >
           <NavbarButton
             variant='primary'
             className='bg-brand-primary text-white'
@@ -65,7 +68,10 @@ export function AppNavbar() {
             />
             <NavbarLogo src={Logo} />
           </div>
-          <a href='https://courses.chaicode.com/learn/account/signin'>
+          <a
+            href='https://courses.chaicode.com/learn/account/signin'
+            title='Login'
+          >
             <NavbarButton
               variant='primary'
               className='bg-brand-primary text-white'
@@ -83,6 +89,7 @@ export function AppNavbar() {
             <a
               key={`mobile-link-${idx}`}
               href={item.link}
+              title={item.name}
               onClick={() => setIsMobileMenuOpen(false)}
               className='relative flex items-center gap-1 text-neutral-600 dark:text-neutral-300'
             >

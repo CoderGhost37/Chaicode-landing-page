@@ -87,6 +87,7 @@ export function Cohorts() {
 
                 <a
                   href={cohort.href}
+                  title={cohort.name}
                   className='group mt-4 flex justify-center items-center gap-2 text-white font-medium w-full bg-gradient-to-r from-brand-primary/90 to-text-primary/90 group-hover:from-brand-primary group-hover:to-text-primary py-2 px-4 rounded transition-all duration-300'
                 >
                   <span>Learn More</span>
