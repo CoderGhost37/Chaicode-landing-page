@@ -14,12 +14,19 @@ export function Footer() {
           transition={{ duration: 0.5 }}
           className='space-y-4 max-w-sm'
         >
-          <img src={Logo} alt='logo' className='h-8 w-auto' />
+          <img
+            src={Logo}
+            alt='logo'
+            width={150}
+            height={80}
+            className='h-8 w-auto'
+          />
           <p className='text-sm text-gray-300'>Home for programmers</p>
           <div className='flex gap-4 text-lg'>
             {footer.socials.map((social) => (
               <a
                 href={social.link}
+                title={social.name}
                 target='_blank'
                 className='text-gray-300 hover:text-text-primary transition duration-200 hover:-translate-y-0.5'
               >
@@ -48,6 +55,7 @@ export function Footer() {
                 >
                   <a
                     href={item.link}
+                    title={item.name}
                     className='hover:text-text-primary font-poppins'
                   >
                     {item.name}
@@ -66,6 +74,7 @@ export function Footer() {
                 >
                   <a
                     href={item.link}
+                    title={item.name}
                     className='hover:text-text-primary font-poppins'
                   >
                     {item.name}

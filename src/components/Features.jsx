@@ -76,6 +76,7 @@ export function Features() {
                   key={src}
                   src={src}
                   alt={`Avatar ${i + 1}`}
+                  loading='lazy'
                   className='w-10 h-10 md:w-14 md:h-14 rounded-full border-2 border-[#FF7700] object-cover shadow-md animate-fade-in'
                   style={{ marginLeft: i === 0 ? 0 : '-12px' }}
                 />

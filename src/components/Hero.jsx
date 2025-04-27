@@ -44,7 +44,7 @@ export function Hero() {
           className='md:hidden block relative mt-4 text-center z-20 text-neutral-200 bg-clip-text p-2 text-4xl font-bold sm:text-6xl'
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.6 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
         >
           Consistency and Community
         </motion.p>
@@ -53,15 +53,15 @@ export function Hero() {
           className='md:mt-2 text-center z-20 text-text-primary bg-clip-text text-lg font-semibold md:text2xl lg:text-3xl'
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.7 }}
+          transition={{ duration: 0.5, delay: 0.5 }}
         >
           An unmatched Learning Experience for coding courses.
         </motion.p>
         <motion.p
-          className='mt-8 text-center z-20 text-gray-300 bg-clip-text text-sm sm:text-lg'
+          className='mt-8 text-center z-20 text-gray-300 text-sm sm:text-lg'
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.8 }}
+          transition={{ duration: 0.5, delay: 0.6 }}
         >
           Content is everywhere, but we provide a learning experience that is
           unmatched — bounties, peer learning, code reviews, virtual hostel,

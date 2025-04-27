@@ -58,7 +58,13 @@ export function KeyBenefitsOfCohort() {
           transition={{ duration: 0.6, delay: 0.5 }}
         >
           <div className='transition duration-200 group-hover:translate-x-2 flex-1 aspect-video rounded-lg'>
-            <img src={AluminiImg} alt='Alumni' className='rounded-lg' />
+            <img
+              src={AluminiImg}
+              alt='Alumni'
+              width='auto'
+              height='full'
+              className='rounded-lg'
+            />
           </div>
 
           <div className='flex-1'>

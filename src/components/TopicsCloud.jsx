@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
 import { topics } from '../constant/data';
+import { cn } from '../lib/utils';
 
 export function TopicsCloud() {
   return (
@@ -63,7 +64,11 @@ function TopicPill({ topic }) {
         alt={`${topic.name} Logo`}
         width={24}
         height={24}
-        className='mr-2 rounded-full'
+        className={cn(
+          'mr-2 rounded-full',
+          ['NextJs', 'MCP Server'].includes(topic.name) && 'invert'
+        )}
+        loading='lazy'
       />
       {topic.name}
     </motion.a>

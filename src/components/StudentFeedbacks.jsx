@@ -139,6 +139,9 @@ export function StudentFeedbacks() {
                         <img
                           src={testimonials[currentIndex].image}
                           alt={testimonials[currentIndex].name}
+                          loading='lazy'
+                          width={96}
+                          height={96}
                           className='w-full h-full object-cover rounded-full'
                         />
                       </div>
@@ -177,7 +180,7 @@ export function StudentFeedbacks() {
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.1 }}
-                      className='text-white text-lg italic'
+                      className='text-white text-lg italic mb-4'
                     >
                       "{testimonials[currentIndex].text}"
                     </motion.p>
