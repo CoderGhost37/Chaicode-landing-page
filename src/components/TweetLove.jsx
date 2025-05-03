@@ -71,7 +71,12 @@ export function TweetLove() {
               >
                 {tweets.map((id, index) => (
                   <div key={`${colIndex}-${index}`} className='w-full'>
-                    <Tweet id={id} />
+                    <Tweet
+                      id={id}
+                      fallback={
+                        <div className='w-full h-32 bg-gray-600 animate-pulse' />
+                      }
+                    />
                   </div>
                 ))}
               </div>

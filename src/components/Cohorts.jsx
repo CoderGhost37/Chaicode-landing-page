@@ -2,6 +2,7 @@ import { ArrowRight, Calendar, Clock } from 'lucide-react';
 import { motion } from 'motion/react';
 import { cohorts } from '../constant/data';
 import YouTube from 'react-youtube';
+import { Suspense } from 'react';
 
 export function Cohorts() {
   return (
@@ -44,14 +45,21 @@ export function Cohorts() {
               className='relative rounded bg-background-secondary flex flex-col hover:scale-[1.02] transition-transform duration-300'
             >
               <div className='aspect-video w-full relative rounded-t overflow-hidden'>
-                <YouTube
-                  videoId={cohort.videoId}
-                  style={{ width: '100%', height: '100%' }}
-                  opts={{
-                    height: '100%',
-                    width: '100%',
-                  }}
-                />
+                <Suspense
+                  fallback={
+                    <div className='w-full h-full bg-gray-600 animate-pulse' />
+                  }
+                >
+                  <YouTube
+                    loading='lazy'
+                    videoId={cohort.videoId}
+                    style={{ width: '100%', height: '100%' }}
+                    opts={{
+                      height: '100%',
+                      width: '100%',
+                    }}
+                  />
+                </Suspense>
               </div>
               <div className='flex flex-col py-4 px-2 md:px-4'>
                 <p className='text-white text-base sm:text-lg lg:text-xl font-bold w-full truncate'>

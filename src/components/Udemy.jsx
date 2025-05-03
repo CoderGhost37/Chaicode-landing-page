@@ -9,6 +9,7 @@ import {
 } from './ui/carousel';
 import { udemyCourses } from '../constant/data';
 import YouTube from 'react-youtube';
+import { Suspense } from 'react';
 
 export function UdemyCourses() {
   const cards = udemyCourses.map((course, index) => (
@@ -97,14 +98,18 @@ function UdemyCourseCard({ course, index }) {
       viewport={{ once: true }}
     >
       <div className='aspect-video w-full relative overflow-hidden'>
-        <YouTube
-          videoId={course.videoId}
-          style={{ width: '100%', height: '100%' }}
-          opts={{
-            height: '100%',
-            width: '100%',
-          }}
-        />
+        <Suspense
+          fallback={<div className='w-full h-full bg-gray-600 animate-pulse' />}
+        >
+          <YouTube
+            videoId={course.videoId}
+            style={{ width: '100%', height: '100%' }}
+            opts={{
+              height: '100%',
+              width: '100%',
+            }}
+          />
+        </Suspense>
       </div>
 
       <div className='p-6'>

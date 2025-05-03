@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'motion/react';
 import { ChevronLeft, ChevronRight, Quote, Star } from 'lucide-react';
 import { testimonials } from '../constant/data';
 
@@ -115,7 +115,7 @@ export function StudentFeedbacks() {
 
       <div className='mt-8 w-full overflow-hidden'>
         <div className='relative max-w-5xl mx-auto'>
-          <div className='relative overflow-hidden h-[400px] md:h-[350px] rounded-xl bg-background-secondary p-6 border border-brand-secondary/20'>
+          <div className='relative overflow-hidden h-[400px] md:h-[350px] rounded-xl bg-background-secondary px-4 md:px-6 py-12 md:py-8 border border-brand-secondary/20'>
             <Quote className='absolute top-6 left-6 w-10 h-10 text-brand-primary opacity-20' />
 
             <AnimatePresence initial={false} custom={direction} mode='wait'>

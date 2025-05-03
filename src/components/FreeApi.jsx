@@ -1,6 +1,7 @@
 import { motion } from 'motion/react';
 import { AspectRatio } from './ui/aspect-ratio';
 import YouTube from 'react-youtube';
+import { Suspense } from 'react';
 
 export function FreeApi() {
   return (
@@ -49,14 +50,20 @@ export function FreeApi() {
             ratio={16 / 9}
             className='rounded-lg h-full overflow-hidden'
           >
-            <YouTube
-              videoId='FjHSOAtlyKI'
-              style={{ width: '100%', height: '100%' }}
-              opts={{
-                height: '100%',
-                width: '100%',
-              }}
-            />
+            <Suspense
+              fallback={
+                <div className='w-full h-full bg-gray-600 animate-pulse' />
+              }
+            >
+              <YouTube
+                videoId='FjHSOAtlyKI'
+                style={{ width: '100%', height: '100%' }}
+                opts={{
+                  height: '100%',
+                  width: '100%',
+                }}
+              />
+            </Suspense>
           </AspectRatio>
         </motion.div>
       </motion.div>

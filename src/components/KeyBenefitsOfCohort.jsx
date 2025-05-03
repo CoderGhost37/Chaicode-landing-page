@@ -61,8 +61,9 @@ export function KeyBenefitsOfCohort() {
             <img
               src={AluminiImg}
               alt='Alumni'
-              width='auto'
-              height='full'
+              width={500}
+              height={500}
+              loading='lazy'
               className='rounded-lg'
             />
           </div>

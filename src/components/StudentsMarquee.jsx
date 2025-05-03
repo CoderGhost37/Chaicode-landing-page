@@ -10,7 +10,7 @@ import { Marquee } from './ui/marquee';
 export function StudentsMarquee() {
   const arr = [LinkedIn, FaceBook, Google, TikTok, Messenger, Apple];
   return (
-    <div className='w-full overflow-hidden py-12 z-10 max-w-5xl mx-auto'>
+    <div className='w-full overflow-hidden px-4 py-12 z-10 max-w-5xl mx-auto'>
       <motion.p
         className='text-center text-gray-300 bg-clip-text text-sm sm:text-lg'
         initial={{ opacity: 0, y: 10 }}

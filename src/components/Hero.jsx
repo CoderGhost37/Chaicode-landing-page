@@ -3,6 +3,7 @@ import { BackgroundFollowGlow } from './ui/background-follow-glow';
 import { ArrowRight } from 'lucide-react';
 import { cn } from '../lib/utils';
 import YouTube from 'react-youtube';
+import { Suspense } from 'react';
 
 export function Hero() {
   return (
@@ -94,14 +95,21 @@ export function Hero() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, delay: 0.9 }}
         >
-          <YouTube
-            videoId='yG8JMlldoCE'
-            style={{ width: '100%', height: '100%' }}
-            opts={{
-              height: '100%',
-              width: '100%',
-            }}
-          />
+          <Suspense
+            fallback={
+              <div className='w-full h-full bg-gray-600 animate-pulse' />
+            }
+          >
+            <YouTube
+              loading='eager'
+              videoId='yG8JMlldoCE'
+              style={{ width: '100%', height: '100%' }}
+              opts={{
+                height: '100%',
+                width: '100%',
+              }}
+            />
+          </Suspense>
         </motion.div>
       </motion.div>
     </BackgroundFollowGlow>
